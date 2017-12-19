@@ -1,0 +1,280 @@
+INFINITE LOOP
+#include<stdio.h>
+#define True 1
+
+int main(){
+    int i;
+    for(i=122;;i--)
+  {
+   printf("%c = %d  ",i,i);
+  }
+}
+-----------------------------------------------------------------
+PATTERN 'Z=121'
+#include<stdio.h>
+#define True 1
+
+int main(){
+    int i;
+    for(i=122;i<=97;i--)
+  {
+   printf("%c = %d  ",i,i);
+  }
+}
+--------------------------------------------------------------------
+FROM z TO a
+#include<stdio.h>
+#define True 1
+
+int main(){
+    int i;
+    for(i=122;i<=97;i--)
+  {
+   printf("%c   ",i);
+  }
+}
+----------------------------------------------------------------
+FROM 10 TO 1
+#include<stdio.h>
+#define True 1
+
+int main(){
+    int i;
+    for(i=10;i<=1;i--)
+  {
+   printf("%d   ",i);
+  }
+}
+-------------------------------------------------------------------
+DISPLAYING TRUE IN HEADER
+#include<stdio.h>
+#define True 1
+
+int main(){
+ 
+     printf("VALUE IS %d ",True);
+  
+}
+--------------------------------------------------------------------
+1. Write a program in C to display the first 10 natural numbers. 
+Expected Output :
+1 2 3 4 5 6 7 8 9 10
+ 
+#include<stdio.h>
+
+int main(){
+    int i;
+    for(i=1;i<=10;i++)
+  {
+   printf("%d   ",i);
+  }
+}
+---------------------------------------------------------------------
+2. Write a C program to find the sum of first 10 natural numbers.
+Expected Output : 
+The first 10 natural number is :
+1 2 3 4 5 6 7 8 9 10 
+The Sum is : 55
+
+#include<stdio.h>
+
+int main(){
+    int i,SUM=0;
+    for(i=1;i<=10;i++)
+  {
+      SUM=SUM+i;
+  }
+   printf("sum is %d ",SUM);
+  
+}
+------------------------------------------------------------------------
+3. Write a program in C to read 10 numbers from keyboard and find their sum and average.
+
+#include<stdio.h>
+
+int main(){
+    int i,n=1,sum=0;
+    float avg;
+    for(i=1;i<=10;i++)
+  {
+      printf("Number%d :"  ,i);
+      scanf("%d",&n);
+       sum=sum+n;
+       avg = sum%10;
+  }
+      
+  
+   printf("sum is %d  ",sum);
+    printf("avg is %.2f  ",avg);
+  
+}
+---------------------------------------------------------------------------------------
+4.Write a program in C to display the cube of the number upto given an integer
+
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+    int i,x,n=1,sum=0;
+    float avg;
+    
+    scanf("%d",&x);
+    for(i=1;i<=x;i++)
+  {
+      printf("\nNumber is :%d and cube is :%d"  ,i,i*i*i);
+     
+  }
+    
+}  
+----------------------------------------------------------------------------------
+5.Write a program in C to make such a pattern like right angle triangle with a number which will repeat a number in a row. 
+The pattern like :
+
+ 1
+ 22
+ 333
+ 4444
+
+#include<stdio.h>
+
+int main(){
+    int i,j,n=1,sum=0;
+    float avg;
+    for(i=1;i<=4;i++)
+    {
+      for(j=1;j<=i;j++)
+  {
+      printf("%d",i);
+     
+  }
+    printf("\n");
+    }
+}  
+ ----------------------------------------------------------------------------------------
+6.Write a C program to convert a string to a long integer. 
+
+Expected Output :
+
+In decimals: 2016, 4235440, -3624422, 5947391
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+   long val;
+   char str[20];
+   
+   strcpy(str, "98993489adfav");
+   val = atol(str);
+   printf("String value = %s, Long value = %ld\n", str, val);
+
+   
+}
+
+
+
+------------------------------------------------------------------------------------------
+                  EXERCISE 2
+1 Write a C program to accept two integers and check whether they are equal or not. 
+Test Data : 15 15
+Expected Output : 
+Number1 and Number2 are equal
+
+#include<stdio.h>
+
+int main(){
+    int i,j;
+    scanf("%d",&i);
+    scanf("%d",&j);
+    if(i==j)
+    { printf(" number 1 and number2 are equal");
+    }
+    else
+    {
+    printf("number1 and number2 are not equal");
+    }
+}
+--------------------------------------------------------------------------------------------
+2 Write a C program to check whether a given number is positive or negative. 
+Test Data : 15 
+Expected Output :
+15 is a positive number
+
+ #include <stdio.h>
+
+int main () {
+   int i;
+   scanf("%d",&i);
+   if(i<0)
+   printf("%d is a negative number",i);
+   else
+   printf("%d is a positive number",i);
+   
+}
+    
+ ---------------------------------------------------------------------------------------------
+ 3 Write a C program to check whether a triangle is Equilateral, Isosceles or Scalene. 
+Test Data : 
+50 50 60 
+Expected Output :
+This is an isosceles triangle.
+
+#include <stdio.h>
+
+int main () {
+   int x,y,z;
+   scanf("%d",&x);
+   scanf("%d",&y);
+   scanf("%d",&z);
+   if(x==y==z)
+   printf("This is an equilateral triangle");
+   else if(x!=y && y!=z && z!=x)
+   printf("This is scalene triangle");
+   else
+   printf("This is an isosceles triangle");
+   
+}
+-------------------------------------------------------------------------------------------------
+Write a C program to check whether a character is an alphabet, digit or special character. 
+Test Data : 
+@
+Expected Output :
+This is a special character.
+
+#include <stdio.h>
+
+int main () {
+   char x;
+   scanf("%c",&x);
+   
+   if(x>= 'a' && x<='z' || x>='A' && x<='Z')
+   printf("It is a character");
+   else if(x>='0' && x<='9')
+   printf("It is a digit");
+   else
+   printf("It is a special character");
+   
+}
+---------------------------------------------------------------------------------------------------
+Write a program in C to calculate and print the Electricity bill of a given customer. The customer id., name and unit consumed by the user should be taken from the keyboard and display the total amount to pay to the customer. The charge are as follow : Go to the editor
+
+Unit	                         Charge/unit
+upto 199	                      @1.20
+200 and above but less than 400	@1.50
+400 and above but less than 600	@1.80
+600 and above	@2.00
+If bill exceeds Rs. 400 then a surcharge of 15% will be charged and the minimum bill should be of Rs. 100/-
+
+Test Data : 
+1001
+James 
+800 
+Expected Output :
+Customer IDNO :1001 
+Customer Name :James 
+unit Consumed :800 
+Amount Charges @Rs. 2.00 per unit : 1600.00 
+Surchage Amount : 240.00 
+
+Net Amount Paid By the Customer : 1840.00
