@@ -1,0 +1,143 @@
+ GLOBAL CONSTANT LOCAL #DEFINE
+#include<stdio.h>
+#define b 9
+
+int add(int x,int y);
+ int a=6;
+ void main()
+    {
+       int z;
+      z= (a > b)? a : b;
+       printf(" result is %d",z);
+    }
+-------------------------------------------------------------
+ CALL BY VALUE
+#include<stdio.h>
+void main()
+	{
+	  int x,y;
+	  printf("enter 2 digits");
+	  scanf("%d %d",&x,&y);
+	  swap(x,y);
+	  getch();
+}
+int swap(int x,int y)
+  {
+     x=x+y-(y=x);
+     printf("result is %d %d",x,y);
+     return 0;
+
+  }
+ ---------------------------------------------------------------
+    CALL BY REFERENCE
+#include<stdio.h>
+void main()
+	{
+	  int x,y;
+	  printf("enter two digits");
+	  scanf("%d %d",&x,&y);
+	  swap(&x,&y);
+	  getch();
+	}
+int swap(int *x,int *y)
+	{
+	 *x=*x+*y-(*y=*x);
+	  printf("result is %d %d",*x,*y);
+	  return 0;
+	}
+
+------------------------------------------------------------
+  STRCPY
+  #include <stdio.h>
+#include<string.h>
+ 
+int main ()
+{
+   char string[20];
+   
+  strcpy(string,"partyyyyyyy") ;
+   printf("The string is : %s \n", string );
+   return 0;
+}
+-----------------------------------------------------------
+   STRLEN
+  #include <stdio.h>
+#include<string.h>
+ 
+int main ()
+{   int p;
+   char string[20]="PARTYJHHFHER";
+   
+  p=strlen(string) ;
+   printf("The string LENGTH is : %d \n", p );
+   return 0;
+}
+-------------------------------------------------------------
+    STRCAT,	STRCMP
+#include <stdio.h>
+#include<string.h>
+ 
+int main ()
+{   int p,a;
+   char string[20]="PARTYJHHFHER";
+   char string1[20]="gukhkghrkver";
+   char stringr[50];
+   a=strcmp(string,string1);
+   strcpy(stringr,strcat(string,string1));
+  p=strlen(string) ;
+   printf("the result is %d",a);
+   printf("The string LENGTH is : %d \n", p );
+   printf("complete string is %s",strcat(string,string1));
+   return 0;
+}
+------------------------------------------------------------------
+#include <stdio.h>
+#include<string.h>
+ 
+int main ()
+{   int p,a;
+   char string[20]="PARTYJHHFHER";
+   char string1[20]="gukhkghrkver";
+   char stringr[50];
+   a=strcmp(string,string1);
+   strcpy(stringr,strcat(string,string1));
+  p=strlen(string) ;
+   printf("the result is %d",a);
+   printf("The string LENGTH is : %d \n", p );
+   printf("complete string is %s",strcat(string,string1));
+   printf(" string in lower is %s",strlwr(string));
+   printf("string in upper is %s",strupr(string1));
+     printf("reversed string is %s",strrev(strcat(string,string1)));
+   return 0;
+}
+--------------------------------------------------------------------
+   STATIC
+  #include <stdio.h>
+ static int g = 5;
+ void fn(){
+ 	static int i = 0;
+ 	printf("g = %d\t", g--);
+ 	printf("i = %d\n",i++);
+ }
+int main(){
+  while(g >= 2)
+  fn();	
+  return 0;
+}
+-----------------------------------------------------------------------
+  AUTO
+  #include <stdio.h>
+
+int sum(int n1, int n2){
+  auto int s;      //NOT NEEDED TO GIVE AUTO SIMILAR TO OTHER PROGRAMS 
+  s = n1+n2;
+  return s;
+}
+int main(){
+  int i = 2, j = 3, k;
+  k = sum(i, j);
+  printf("sum is : %d\n", k);
+  return 0;
+}
+-------------------------------------------------------------------------
+
