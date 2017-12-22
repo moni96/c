@@ -1,0 +1,187 @@
+ ENUM FUNCTION
+#include<stdio.h>
+enum state {g = 0,d, f};
+enum state currstate = 2;
+enum state findstate()
+	{
+	  return currstate;
+	}
+int main()
+	{
+	( findstate() == g)? printf("working"):printf("not working");
+	 return 0;
+	 getch();
+	}
+-----------------------------------------------------------------------------
+    ENUM FUNCTION 2
+#include <stdio.h>
+enum day {sunday = 1, monday, tuesday = 5,
+          wednesday, thursday = 10, friday, saturday};
+ 
+int main()
+{
+    printf("%d %d %d %d %d %d %d", sunday, monday, tuesday,
+            wednesday, thursday, friday, saturday);
+    return 0;
+}
+------------------------------------------------------------------------------
+  FILE HANDLING1
+#include<stdio.h>  
+#include<conio.h>
+void main(){  
+FILE *fp;  
+char c;  
+clrscr();  
+fp=fopen("file.txt","r");  
+  
+while((c=fgetc(fp))!=EOF){  
+printf("%c",c);  
+}  
+  
+rewind(fp);//moves the file pointer at beginning of the file  
+  
+while((c=fgetc(fp))!=EOF){  
+printf("%c",c);  
+}  
+  
+fclose(fp);    
+getch();    
+} 
+------------------------------------------------------------------------------------
+    POINTER
+#include<stdio.h>  
+int main(){  
+int number=50;      
+int *p;//pointer to int    
+int **p2;//pointer to pointer        
+p=&number;//stores the address of number variable      
+p2=&p;    
+printf("Address of number variable is %x \n",&number);      
+printf("Address of p variable is %x \n",p);      
+printf("Value of *p variable is %d \n",*p);      
+printf("Address of p2 variable is %x \n",p2);      
+printf("Value of **p2 variable is %d \n",*p);      
+return 0;  
+} 
+---------------------------------------------------------------------------------------
+  ERROR HANDLING IN FILES
+#include <stdio.h>       
+#include <errno.h>       
+#include <string.h> 
+ 
+int main ()
+{
+    FILE *fp;
+ 
+    /* 
+        If a file, which does not exists, is opened,
+        we will get an error
+    */ 
+    fp = fopen("IWillReturnError.txt", "r");
+ 
+    printf("Value of errno: %d\n ", errno);
+    printf("The error message is : %s\n", strerror(errno));
+    perror("Message from perror");
+ 
+    return 0;
+}
+------------------------------------------------------------------------------------------
+    RECURSION
+#include<stdio.h>
+int factorial( int n)
+	{
+	  if (n<0)
+	   return -1;
+	  if(n==0)
+	   return 1;
+	   return(n * factorial(n-1));
+
+	   }
+	int main()
+	{
+	int fact=0,a;
+	clrscr();
+	 printf("enter number to find factorial ");
+	 scanf("%d",&a);
+	 fact=factorial(a);
+	 printf("\n factorial of %d is %d",a,fact);
+	 return 0;
+
+	}
+-------------------------------------------------------------------------------------------
+        STRINGS WITH 2D ARRAY
+#include<stdio.h>
+void main()
+{
+	// Initialize 2D array
+	char colour[4][10] = {"Blue", "Red", "Orange","Yellow"};
+	     int i=0;
+	// Printing Strings stored in 2D array
+	for (i = 0; i < 4; i++)
+	{
+		printf("%s\t",colour[i]);
+	}
+
+}
+---------------------------------------------------------------------------------------------
+   OPERATION WITH POINTER
+#include<stdio.h>
+int main(){  
+int number=50;        
+int *p;//pointer to int      
+p=&number;     
+printf("Address of p variable is %u \n",p);        
+p=p+3;    
+printf("After adding 3: Address of p variable is %u \n",p);       
+return 0;  
+}
+---------------------------------------------------------------------------------------------
+   READING FROM ONEFILE AND WRITING TO OTHER FILE
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+ void main()
+	{
+	  FILE *fp1,*fp2;
+	  char ch;
+	  clrscr();
+
+	  fp1 = fopen("file.txt","r");
+	  fp2 = fopen("output.txt","w");
+
+	  while(1)
+	  {
+	   ch = fgetc(fp1);
+	   if(ch== EOF)
+	    break;
+	   else
+	    putc(ch,fp2);
+	   }
+	   printf("file copied successfully");
+	   fclose(fp1);
+	   fclose(fp2);
+	  }
+-----------------------------------------------------------------------------------------------------
+  PASSING ARGUMENTS
+#include<stdio.h>
+#include<conio.h>
+int main(int argc,char *argv[])
+{
+ int i;
+
+ if(argc>=2)
+ {
+ printf("the arguments supplied are:\n");
+ for(i=1;i<argc;i++)
+ {
+  printf("%s\t",argv[i]);
+  }
+  }
+  else
+  {
+   printf("argument list is empty\n");
+  }
+  return 0;
+ }
+------------------------------------------------------------------------------------------------------
